@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MNNJ Exterior Property Care — Clean. Protect. Maintain.</title>
   <meta name="description" content="Roof, gutter, driveway, render, window and solar panel cleaning — washed properly, treated to last and kept that way. Owned and run by former professional footballer Marvin Johnson.">
-  <meta name="theme-color" content="#06080b">
+  <meta name="theme-color" content="#f6f8fa">
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Michroma&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..110,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>document.documentElement.classList.add('js')</script>
+  <script>(function(){var d=document.documentElement,t='light';try{t=localStorage.getItem('mnnj-theme')||'light'}catch(e){}d.dataset.theme=t;d.classList.add('js')})()</script>
 </head>
 <body>
   <!-- PLACEHOLDERS to replace before launch: phone 07700 900123, email hello@example.com -->
@@ -20,7 +20,8 @@
   <header class="nav" id="nav">
     <div class="wrap nav__in">
       <a class="nav__brand" href="index.html" aria-label="MNNJ Exterior Property Care — home">
-        <img src="assets/img/logo-mark.png" alt="" width="526" height="229">
+        <img decoding="async" class="logo--light" src="assets/img/logo-mark-ink.webp" alt="" width="240" height="104">
+        <img decoding="async" class="logo--dark" src="assets/img/logo-mark.webp" alt="" width="240" height="104">
       </a>
       <nav class="nav__links" id="menu" aria-label="Primary">
         <a href="#approach">Approach</a>
@@ -29,15 +30,19 @@
         <a href="about.html">About</a>
         <a href="#quote">Contact</a>
       </nav>
+      <button class="iconbtn theme" type="button" id="theme" aria-pressed="false" aria-label="Dark theme">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.500A8 8 0 0 1 9.500 4 8 8 0 1 0 20 14.500Z"/></svg>
+      </button>
       <a class="btn btn--sm nav__cta" href="#quote">Free quote</a>
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
+      <button class="iconbtn nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </header>
 
   <main id="main">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero has-photo has-photo--side" data-photo="assets/img/photos/bg-home.webp">
       <div class="wrap hero__in">
         <div class="hero__copy">
           <p class="eyebrow">Exterior property care</p>
@@ -95,45 +100,50 @@
 
         <div class="pillars">
           <article class="pillar" data-reveal style="--d:0">
-            <svg class="pillar__art art-clean" viewBox="0 0 220 96" aria-hidden="true">
-              <rect class="s" x="12" y="34" width="196" height="34"/>
-              <path class="s" d="M61 34v34M110 34v34M159 34v34" opacity=".45"/>
-              <rect class="grime" x="12" y="34" width="196" height="34"/>
-              <path class="b blade" d="M12 22v58"/>
-            </svg>
+            <div class="ba" data-scrub>
+              <img decoding="async" src="assets/img/photos/clean-before.webp" alt="Before: white cladding streaked with green algae" width="700" height="700" loading="lazy">
+              <div class="ba__after"><img decoding="async" src="assets/img/photos/clean-after.webp" alt="After: the same cladding after a low-pressure wash" width="700" height="700" loading="lazy"></div>
+              <span class="ba__blade" aria-hidden="true"></span>
+              <span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
+              <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span>
+            </div>
             <span class="pillar__num">01</span>
             <h3 class="chrome">Clean</h3>
             <p>Moss, algae, lichen and years of traffic film, lifted with the right pressure for the surface — not just the highest one.</p>
           </article>
 
           <article class="pillar" data-reveal style="--d:1">
-            <svg class="pillar__art art-protect" viewBox="0 0 220 96" aria-hidden="true">
-              <path class="s" d="M20 66h180"/>
-              <path class="b dome" d="M30 66a80 54 0 0 1 160 0"/>
-              <circle class="drop" cx="110" cy="58" r="7"/>
-            </svg>
+            <div class="ba" data-scrub>
+              <img decoding="async" src="assets/img/photos/protect-before.webp" alt="Before: unprotected render stained by rain run-off" width="700" height="700" loading="lazy">
+              <div class="ba__after"><img decoding="async" src="assets/img/photos/protect-after.webp" alt="After: a sealed surface where rain beads and runs off" width="700" height="700" loading="lazy"></div>
+              <span class="ba__blade" aria-hidden="true"></span>
+              <span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
+              <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span>
+            </div>
             <span class="pillar__num">02</span>
             <h3 class="chrome">Protect</h3>
             <p>Biocide treatments and sealants that slow the regrowth, so the result lasts seasons instead of weeks.</p>
           </article>
 
           <article class="pillar" data-reveal style="--d:2">
-            <svg class="pillar__art art-maintain" viewBox="0 0 220 96" aria-hidden="true">
-              <circle class="s" cx="110" cy="48" r="36"/>
-              <circle class="tick" cx="110" cy="48" r="28" fill="none" stroke-width="6" stroke-dasharray="1.5 13.16"/>
-              <g class="hand"><path class="b" d="M110 48V14"/><circle cx="110" cy="12" r="4.5" fill="#8fd0ff"/></g>
-              <circle cx="110" cy="48" r="3" fill="#e8ecf1"/>
-            </svg>
+            <div class="ba" data-scrub>
+              <img decoding="async" src="assets/img/photos/maintain-before.webp" alt="Before: a gutter overgrown with plants and debris" width="700" height="700" loading="lazy">
+              <div class="ba__after"><img decoding="async" src="assets/img/photos/maintain-after.webp" alt="After: a clear gutter and downpipe carrying water away" width="700" height="700" loading="lazy"></div>
+              <span class="ba__blade" aria-hidden="true"></span>
+              <span class="ba__tag ba__tag--a" aria-hidden="true">After</span>
+              <span class="ba__tag ba__tag--b" aria-hidden="true">Before</span>
+            </div>
             <span class="pillar__num">03</span>
             <h3 class="chrome">Maintain</h3>
             <p>Gutters cleared, panels rinsed, a return visit in the diary. Small, regular jobs that stop the big expensive ones.</p>
           </article>
         </div>
+        <p class="photo-note" data-reveal>Example photos, not MNNJ jobs. The Clean pair is one wall before and after a low-pressure wash. <a href="credits.html">Photo credits</a></p>
       </div>
     </section>
 
     <!-- SERVICES: the house is the menu -->
-    <section class="section section--alt" id="services">
+    <section class="section section--alt has-photo" id="services" data-photo="assets/img/photos/bg-cottages.webp">
       <div class="wrap">
         <div class="section__head" data-reveal>
           <p class="eyebrow">Services</p>
@@ -201,35 +211,35 @@
           <ol class="svc" data-reveal>
             <li class="svc__item" data-part="roof">
               <button class="svc__btn" type="button"><span class="svc__num">01</span><span class="svc__name">Roof cleaning</span><span class="svc__tag">Clean</span></button>
-              <div class="svc__body"><div><p>Moss scraped and soft-washed off tiles and slates at low pressure, so the roof comes up clean without cracked tiles or stripped coatings.</p></div></div>
+              <div class="svc__body"><div><p>Moss scraped and soft-washed off tiles and slates at low pressure, so the roof comes up clean without cracked tiles or stripped coatings.</p><img decoding="async" class="svc__img" src="assets/img/photos/svc-roof.webp" alt="Moss-covered roof tiles on a cottage" width="720" height="480" loading="lazy"></div></div>
             </li>
             <li class="svc__item" data-part="moss">
               <button class="svc__btn" type="button"><span class="svc__num">02</span><span class="svc__name">Moss &amp; weed removal</span><span class="svc__tag">Protect</span></button>
-              <div class="svc__body"><div><p>Growth cleared from roofs, paths and paving joints, then treated so it's slow to come back.</p></div></div>
+              <div class="svc__body"><div><p>Growth cleared from roofs, paths and paving joints, then treated so it's slow to come back.</p><img decoding="async" class="svc__img" src="assets/img/photos/svc-moss.webp" alt="Clumps of moss growing between roof tiles" width="720" height="480" loading="lazy"></div></div>
             </li>
             <li class="svc__item" data-part="gutter">
               <button class="svc__btn" type="button"><span class="svc__num">03</span><span class="svc__name">Gutter clearing</span><span class="svc__tag">Maintain</span></button>
-              <div class="svc__body"><div><p>Gutters and downpipes vacuumed out from the ground and checked for flow — before the overflow reaches your brickwork.</p></div></div>
+              <div class="svc__body"><div><p>Gutters and downpipes vacuumed out from the ground and checked for flow — before the overflow reaches your brickwork.</p><img decoding="async" class="svc__img" src="assets/img/photos/svc-gutter.webp" alt="Autumn leaves collected along a roof edge and gutter" width="720" height="480" loading="lazy"></div></div>
             </li>
             <li class="svc__item" data-part="windows">
               <button class="svc__btn" type="button"><span class="svc__num">04</span><span class="svc__name">Window cleaning</span><span class="svc__tag">Clean</span></button>
-              <div class="svc__body"><div><p>Frames, sills and glass cleaned with purified water for a finish that dries without streaks or spots.</p></div></div>
+              <div class="svc__body"><div><p>Frames, sills and glass cleaned with purified water for a finish that dries without streaks or spots.</p><img decoding="async" class="svc__img" src="assets/img/photos/svc-window.webp" alt="Cleaning a window with a squeegee vacuum" width="720" height="480" loading="lazy"></div></div>
             </li>
             <li class="svc__item" data-part="walls">
               <button class="svc__btn" type="button"><span class="svc__num">05</span><span class="svc__name">Render &amp; cladding</span><span class="svc__tag">Clean</span></button>
-              <div class="svc__body"><div><p>Green and red algae staining removed from render, cladding, fascias and soffits with a gentle soft-wash.</p></div></div>
+              <div class="svc__body"><div><p>Green and red algae staining removed from render, cladding, fascias and soffits with a gentle soft-wash.</p><img decoding="async" class="svc__img" src="assets/img/photos/svc-render.webp" alt="Cladding half cleaned: algae on one side, the clean finish on the other" width="720" height="480" loading="lazy"></div></div>
             </li>
             <li class="svc__item" data-part="solar">
               <button class="svc__btn" type="button"><span class="svc__num">06</span><span class="svc__name">Solar panel cleaning</span><span class="svc__tag">Maintain</span></button>
-              <div class="svc__body"><div><p>Dirt and bird mess rinsed off with soft brushes and pure water, so your panels aren't generating through a film of grime.</p></div></div>
+              <div class="svc__body"><div><p>Dirt and bird mess rinsed off with soft brushes and pure water, so your panels aren't generating through a film of grime.</p><img decoding="async" class="svc__img" src="assets/img/photos/svc-solar.webp" alt="Solar panels on a tiled house roof" width="720" height="480" loading="lazy"></div></div>
             </li>
             <li class="svc__item" data-part="drive">
               <button class="svc__btn" type="button"><span class="svc__num">07</span><span class="svc__name">Driveway &amp; patio cleaning</span><span class="svc__tag">Clean</span></button>
-              <div class="svc__body"><div><p>Block paving, flags, tarmac and decking pressure-washed back to their original colour, with joints re-sanded where needed.</p></div></div>
+              <div class="svc__body"><div><p>Block paving, flags, tarmac and decking pressure-washed back to their original colour, with joints re-sanded where needed.</p><img decoding="async" class="svc__img" src="assets/img/photos/svc-drive.webp" alt="Pressure washing a dark tarmac surface" width="720" height="480" loading="lazy"></div></div>
             </li>
             <li class="svc__item" data-part="seal">
               <button class="svc__btn" type="button"><span class="svc__num">08</span><span class="svc__name">Sealing &amp; protective treatments</span><span class="svc__tag">Protect</span></button>
-              <div class="svc__body"><div><p>A sealant or biocide finish after cleaning that repels water, resists stains and stretches the time between cleans.</p></div></div>
+              <div class="svc__body"><div><p>A sealant or biocide finish after cleaning that repels water, resists stains and stretches the time between cleans.</p><img decoding="async" class="svc__img" src="assets/img/photos/svc-seal.webp" alt="Water beading on a protected surface" width="720" height="480" loading="lazy"></div></div>
             </li>
           </ol>
         </div>
@@ -237,7 +247,7 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="section" id="process">
+    <section class="section has-photo" id="process" data-photo="assets/img/photos/bg-washing.webp">
       <div class="wrap">
         <div class="section__head" data-reveal>
           <p class="eyebrow">How it works</p>
@@ -266,6 +276,13 @@
     <!-- FOUNDER -->
     <section class="section section--alt" id="owner">
       <div class="wrap founder">
+        <figure class="portrait" data-reveal>
+          <svg class="pitch" viewBox="0 0 420 270" aria-hidden="true"><rect x="10" y="10" width="400" height="250"/><path d="M210 10V260M10 70H72V200H10M410 70H348V200H410"/><circle cx="210" cy="135" r="42"/></svg>
+          <span class="portrait__mono" aria-hidden="true">MJ</span>
+          <img decoding="async" src="assets/img/marvin/award-portrait.webp" alt="Marvin Johnson with his PFA Fans' Player of the Month award at Sheffield Wednesday" width="702" height="878" loading="lazy" onerror="this.remove()">
+          <figcaption class="portrait__cap"><b>Marvin Johnson</b><span>Owner · former professional footballer</span></figcaption>
+        </figure>
+
         <div class="founder__copy" data-reveal>
           <p class="eyebrow">The owner</p>
           <h2 class="h2">Same standards. <span class="chrome">Different pitch.</span></h2>
@@ -280,22 +297,11 @@
           </div>
         </div>
 
-        <svg class="pitch" viewBox="0 0 420 270" role="img" aria-label="A football pitch with a house at the centre spot" data-draw data-reveal>
-          <circle class="pitch__glow" cx="210" cy="135" r="64"/>
-          <rect class="draw" x="10" y="10" width="400" height="250"/>
-          <path class="draw" d="M210 10V260"/>
-          <circle class="draw" cx="210" cy="135" r="42"/>
-          <path class="draw" d="M10 70H72V200H10M10 104H32V166H10M72 112a30 30 0 0 1 0 46"/>
-          <path class="draw" d="M410 70H348V200H410M410 104H388V166H410M348 112a30 30 0 0 0 0 46"/>
-          <path class="draw" d="M10 18a8 8 0 0 0 8-8M402 10a8 8 0 0 0 8 8M410 252a8 8 0 0 0-8 8M18 260a8 8 0 0 0-8-8"/>
-          <circle class="spot" cx="52" cy="135" r="1.8"/><circle class="spot" cx="368" cy="135" r="1.8"/>
-          <path class="draw home" d="M186 138 210 116l24 22M193 133v22h34v-22M205 155v-10h10v10"/>
-        </svg>
       </div>
     </section>
 
     <!-- QUOTE -->
-    <section class="section" id="quote">
+    <section class="section has-photo" id="quote" data-photo="assets/img/photos/bg-street.webp">
       <div class="wrap quote">
         <div class="quote__copy" data-reveal>
           <p class="eyebrow">Free quote</p>
@@ -351,13 +357,14 @@
   <footer class="footer">
     <div class="wrap">
       <div class="footer__in">
-        <img class="footer__logo" src="assets/img/logo.png" alt="MNNJ Exterior Property Care — Clean. Protect. Maintain." width="628" height="309" loading="lazy">
+        <img decoding="async" class="footer__logo" src="assets/img/logo.webp" alt="MNNJ Exterior Property Care — Clean. Protect. Maintain." width="520" height="256" loading="lazy">
         <nav class="footer__links" aria-label="Footer">
           <a href="#services">Services</a>
           <a href="#process">Process</a>
           <a href="about.html">About</a>
           <a href="#quote">Contact</a>
           <a href="https://www.instagram.com/90mjohn/" target="_blank" rel="noopener">Instagram</a>
+          <a href="credits.html">Photo credits</a>
         </nav>
       </div>
       <div class="footer__legal">
@@ -368,5 +375,6 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="shared/design-switch.js" data-design="1" defer></script>
 </body>
 </html>

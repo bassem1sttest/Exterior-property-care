@@ -3,6 +3,35 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
+  /* ---------- theme: light by default, the visitor's choice is remembered ---------- */
+  const root = document.documentElement;
+  const themeBtn = $('#theme');
+  const themeMeta = $('meta[name="theme-color"]');
+  const paintTheme = t => {
+    root.dataset.theme = t;
+    themeBtn.setAttribute('aria-pressed', t === 'dark');
+    themeMeta.content = t === 'dark' ? '#0d131a' : '#f6f8fa';
+  };
+  paintTheme(root.dataset.theme || 'light');
+
+  themeBtn.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('mnnj-theme', next); } catch (e) { /* private mode: the choice just lasts for this page */ }
+    if (!document.startViewTransition || reduce) return paintTheme(next);
+
+    // The new theme opens out in a circle from the button that was pressed.
+    const b = themeBtn.getBoundingClientRect();
+    const x = b.left + b.width / 2, y = b.top + b.height / 2;
+    const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    root.classList.add('theme-anim');
+    const vt = document.startViewTransition(() => paintTheme(next));
+    vt.ready.then(() => root.animate(
+      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] },
+      { duration: 600, easing: 'cubic-bezier(.4, 0, .2, 1)', pseudoElement: '::view-transition-new(root)' }
+    ));
+    vt.finished.finally(() => root.classList.remove('theme-anim'));
+  });
+
   /* ---------- nav ---------- */
   const nav = $('#nav');
   const toggle = $('.nav__toggle');
@@ -37,6 +66,48 @@
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
   $$('[data-reveal], [data-draw]').forEach(el => io.observe(el));
+
+
+  /* ---------- photo backgrounds: load when near, drift with the scroll ---------- */
+  const photoSections = $$('[data-photo]');
+  const onScreen = new Set();
+  const drift = () => onScreen.forEach(el => {
+    const b = el.getBoundingClientRect();
+    el.style.setProperty('--shift', ((b.top + b.height / 2 - innerHeight / 2) * -0.12).toFixed(1) + 'px');
+  });
+  const photoIO = new IntersectionObserver(entries => entries.forEach(({ isIntersecting, target: el }) => {
+    if (!isIntersecting) return onScreen.delete(el);
+    onScreen.add(el);
+    if (el.dataset.loaded) return;
+    el.dataset.loaded = '1';
+    const file = innerWidth < 900 ? el.dataset.photo.replace(/\.webp$/, '-sm.webp') : el.dataset.photo;
+    const src = new URL(file, location.href).href;
+    const img = new Image();
+    img.src = src;
+    img.decode().catch(() => {}).finally(() => {
+      el.style.setProperty('--photo', `url("${src}")`);
+      el.classList.add('photo-ready');
+    });
+  }), { rootMargin: '300px 0px' });
+  photoSections.forEach(el => photoIO.observe(el));
+
+  /* ---------- before / after: the wipe follows the scroll ---------- */
+  const scrubs = $$('[data-scrub]');
+  const scrub = () => scrubs.forEach(el => {
+    const b = el.getBoundingClientRect();
+    const t = Math.min(1, Math.max(0, (innerHeight * 0.92 - b.top) / (innerHeight * 0.55)));
+    el.style.setProperty('--p', (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2).toFixed(3));
+  });
+  if (reduce) {
+    scrubs.forEach(el => el.style.setProperty('--p', 0.5));
+  } else {
+    let queued = false;
+    const frame = () => { queued = false; scrub(); drift(); };
+    const request = () => { if (!queued) { queued = true; requestAnimationFrame(frame); } };
+    addEventListener('scroll', request, { passive: true });
+    addEventListener('resize', request);
+    frame();
+  }
 
   /* ---------- wash pane: a dirty surface you clean with the pointer ---------- */
   const rng = seed => () => {

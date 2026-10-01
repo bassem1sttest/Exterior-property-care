@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — MNNJ Exterior Property Care</title>
   <meta name="description" content="MNNJ Exterior Property Care is owned and run by Marvin Johnson, a former professional footballer who brings a pro's standards to roofs, gutters and driveways.">
-  <meta name="theme-color" content="#06080b">
+  <meta name="theme-color" content="#f6f8fa">
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Michroma&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..110,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>document.documentElement.classList.add('js')</script>
+  <script>(function(){var d=document.documentElement,t='light';try{t=localStorage.getItem('mnnj-theme')||'light'}catch(e){}d.dataset.theme=t;d.classList.add('js')})()</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -19,7 +19,8 @@
   <header class="nav" id="nav">
     <div class="wrap nav__in">
       <a class="nav__brand" href="index.html" aria-label="MNNJ Exterior Property Care — home">
-        <img src="assets/img/logo-mark.png" alt="" width="526" height="229">
+        <img decoding="async" class="logo--light" src="assets/img/logo-mark-ink.webp" alt="" width="240" height="104">
+        <img decoding="async" class="logo--dark" src="assets/img/logo-mark.webp" alt="" width="240" height="104">
       </a>
       <nav class="nav__links" id="menu" aria-label="Primary">
         <a href="index.html#approach">Approach</a>
@@ -28,8 +29,12 @@
         <a href="about.html" aria-current="page">About</a>
         <a href="index.html#quote">Contact</a>
       </nav>
+      <button class="iconbtn theme" type="button" id="theme" aria-pressed="false" aria-label="Dark theme">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.500A8 8 0 0 1 9.500 4 8 8 0 1 0 20 14.500Z"/></svg>
+      </button>
       <a class="btn btn--sm nav__cta" href="index.html#quote">Free quote</a>
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
+      <button class="iconbtn nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </header>
 
@@ -50,18 +55,11 @@
           </div>
         </div>
 
-        <!-- Portrait slot: drop a photo at assets/img/marvin.jpg and uncomment the <img> to replace the monogram. -->
         <figure class="portrait" data-reveal>
-          <svg class="pitch" viewBox="0 0 420 270" aria-hidden="true" data-draw>
-            <rect class="draw" x="10" y="10" width="400" height="250"/>
-            <path class="draw" d="M210 10V260"/>
-            <circle class="draw" cx="210" cy="135" r="42"/>
-            <path class="draw" d="M10 70H72V200H10M10 104H32V166H10M72 112a30 30 0 0 1 0 46"/>
-            <path class="draw" d="M410 70H348V200H410M410 104H388V166H410M348 112a30 30 0 0 0 0 46"/>
-          </svg>
-          <span class="portrait__mono chrome" aria-hidden="true">MJ</span>
-          <!-- <img src="assets/img/marvin.jpg" alt="Marvin Johnson, owner of MNNJ Exterior Property Care"> -->
-          <figcaption class="portrait__cap"><b>Marvin Johnson</b><span>Owner</span></figcaption>
+          <svg class="pitch" viewBox="0 0 420 270" aria-hidden="true"><rect x="10" y="10" width="400" height="250"/><path d="M210 10V260M10 70H72V200H10M410 70H348V200H410"/><circle cx="210" cy="135" r="42"/></svg>
+          <span class="portrait__mono" aria-hidden="true">MJ</span>
+          <img decoding="async" src="assets/img/marvin/applause-portrait.webp" alt="Marvin Johnson applauding the fans in a Sheffield Wednesday shirt" width="960" height="1200" onerror="this.remove()">
+          <figcaption class="portrait__cap"><b>Marvin Johnson</b><span>Owner · former professional footballer</span></figcaption>
         </figure>
       </div>
     </section>
@@ -132,6 +130,18 @@
             </li>
           </ol>
         </div>
+
+        <div class="gallery__head" data-reveal>
+          <h3 class="gallery__title">The football years</h3>
+          <a class="gallery__more" href="https://www.instagram.com/90mjohn/" target="_blank" rel="noopener">More on @90mjohn</a>
+        </div>
+        <ul class="gallery">
+          <li data-reveal><img decoding="async" src="assets/img/marvin/run.webp" alt="Marvin Johnson running out in Sheffield Wednesday's home kit" width="900" height="1125" loading="lazy"></li>
+          <li data-reveal style="--d:1"><img decoding="async" src="assets/img/marvin/pass.webp" alt="Marvin Johnson on the ball in front of the home crowd" width="900" height="900" loading="lazy"></li>
+          <li data-reveal style="--d:2"><img decoding="async" src="assets/img/marvin/away.webp" alt="Marvin Johnson in Sheffield Wednesday's black away kit" width="900" height="900" loading="lazy"></li>
+          <li data-reveal style="--d:3"><img decoding="async" src="assets/img/marvin/action.webp" alt="Marvin Johnson in action during an evening match" width="900" height="900" loading="lazy"></li>
+          <li data-reveal style="--d:4"><img decoding="async" src="assets/img/marvin/training.webp" alt="Marvin Johnson at Port Vale training" width="900" height="1125" loading="lazy"></li>
+        </ul>
       </div>
     </section>
 
@@ -186,13 +196,14 @@
   <footer class="footer">
     <div class="wrap">
       <div class="footer__in">
-        <img class="footer__logo" src="assets/img/logo.png" alt="MNNJ Exterior Property Care — Clean. Protect. Maintain." width="628" height="309" loading="lazy">
+        <img decoding="async" class="footer__logo" src="assets/img/logo.webp" alt="MNNJ Exterior Property Care — Clean. Protect. Maintain." width="520" height="256" loading="lazy">
         <nav class="footer__links" aria-label="Footer">
           <a href="index.html#services">Services</a>
           <a href="index.html#process">Process</a>
           <a href="about.html">About</a>
           <a href="index.html#quote">Contact</a>
           <a href="https://www.instagram.com/90mjohn/" target="_blank" rel="noopener">Instagram</a>
+          <a href="credits.html">Photo credits</a>
         </nav>
       </div>
       <div class="footer__legal">
@@ -203,5 +214,6 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="shared/design-switch.js" data-design="1" defer></script>
 </body>
 </html>
